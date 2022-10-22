@@ -3,7 +3,6 @@ package com.mitocode.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
 import java.io.Serializable;
 
 @Entity
@@ -18,7 +17,7 @@ public class Especialidad implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_especialidad")
-    private int idEspecialidad;
+    private Integer idEspecialidad;
 
     @Column(name = "nombre", nullable = false, length = 50)
     @Size(min=3, message ="El nombre de la especialidad debe contener 3-50 caracteres")

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
 import java.io.Serializable;
 
 @Entity
@@ -19,7 +18,7 @@ public class Paciente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_paciente")
-    private int idPaciente;
+    private Integer idPaciente;
 
     @Size(min = 3, message = "Nombres debe tener minimo 3 caracteres")
     @Column(name = "nombres", nullable = true, length = 70)

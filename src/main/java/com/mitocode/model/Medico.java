@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
 import java.io.Serializable;
 
 @Entity
@@ -18,7 +17,7 @@ public class Medico  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_medico")
-    private int idMedico;
+    private Integer idMedico;
 
     @Column(name = "nombres", nullable = false, length = 70)
     private String nombres;
