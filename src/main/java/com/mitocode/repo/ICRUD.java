@@ -4,13 +4,13 @@ import java.util.List;
 
 public interface ICRUD <T, ID>{
 
-    List<T> listar();
+    List<T> findAll();
 
-    T listarPorId(T t);
+    T findById(T t);
 
-    T registrar(T t);
+    T save(T t);
 
-    void actualizar(T t);
+    void update(T t);
 
-    void eliminar(T t);
+    void delete(T t);
 }

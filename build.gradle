@@ -23,16 +23,17 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    compileOnly('jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1')
-    compileOnly('jakarta.servlet:jakarta.servlet-api:6.0.0')
-    implementation('org.glassfish.jersey.core:jersey-client:3.1.0-M8')
-    implementation('org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.0-RC2')
+    compileOnly 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    implementation 'org.glassfish.jersey.core:jersey-client:3.1.0'
+    implementation'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.0'
     implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
     implementation 'jakarta.ejb:jakarta.ejb-api:4.0.1'
     implementation 'org.postgresql:postgresql:42.5.1'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1'
+
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
-    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
