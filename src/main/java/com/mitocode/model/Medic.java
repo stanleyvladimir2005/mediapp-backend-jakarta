@@ -29,8 +29,8 @@ public class Medic implements Serializable {
     @Column(name = "dui", nullable = false, length = 9)
     private String dui;
 
-    @Column(name = "address", nullable = false, length = 8)
-    private String address;
+    @Column(name = "phone", nullable = false, length = 8)
+    private String phone;
 
     @Email
     @Column(name = "email", length = 150)
