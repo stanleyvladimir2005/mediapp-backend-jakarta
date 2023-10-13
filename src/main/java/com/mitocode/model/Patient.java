@@ -12,9 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Table(name = "patient")
 @NamedQuery(name = "Patient.listAll", query = "SELECT p FROM Patient p ORDER BY p.idPatient")
-
 public class Patient implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id

@@ -11,9 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @NamedQuery(name = "Specialty.listAll", query = "SELECT spe FROM Specialty spe ORDER BY spe.idSpecialty")
-
 public class Specialty implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id

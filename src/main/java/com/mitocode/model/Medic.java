@@ -12,7 +12,6 @@ import java.io.Serializable;
 @Table(name = "medic")
 @NamedQuery(name = "Medic.listAll", query = "SELECT m FROM Medic m ORDER BY m.idMedic")
 public class Medic implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id

@@ -12,8 +12,8 @@ import java.io.Serializable;
 @Table(name ="exam")
 @NamedQuery(name = "Exam.listAll", query = "SELECT ex FROM Exam ex ORDER BY ex.idExam")
 public class Exam implements Serializable {
-
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_exam")
