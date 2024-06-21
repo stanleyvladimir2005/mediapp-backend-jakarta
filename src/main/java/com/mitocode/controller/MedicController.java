@@ -6,12 +6,14 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
+import lombok.val;
 
 @RequestScoped
 @Path("/medics")
 @Consumes(value = MediaType.APPLICATION_JSON)
 @Produces(value = MediaType.APPLICATION_JSON)
 public class MedicController {
+
     @Inject
     private MedicRepo medicRepo;
 
@@ -28,9 +30,9 @@ public class MedicController {
 
     @POST
     public Response save(Medic medic, @Context UriInfo uriInfo){
-       Medic med = medicRepo.save(medic);
-       UriBuilder builder = uriInfo.getAbsolutePathBuilder();
-       builder.path(Integer.toString(med.getIdMedic()));
+       val medicDto= medicRepo.save(medic);
+       val builder = uriInfo.getAbsolutePathBuilder();
+       builder.path(Integer.toString(medicDto.getIdMedic()));
         return Response.created(builder.build()).build();
     }
 
@@ -44,10 +46,10 @@ public class MedicController {
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") Integer id){
-        Medic med = medicRepo.findById(new Medic(id));
-        if (med == null)
+        val medic = medicRepo.findById(new Medic(id));
+        if (medic == null)
             throw new WebApplicationException("ID NOT FOUND: "+id);
-        medicRepo.delete(med);
+        medicRepo.delete(medic);
         return Response.noContent().build();
     }
 }

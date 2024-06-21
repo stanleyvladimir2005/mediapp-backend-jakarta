@@ -6,12 +6,14 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
+import lombok.val;
 
 @RequestScoped
 @Path("/exams")
 @Consumes(value = MediaType.APPLICATION_JSON)
 @Produces(value = MediaType.APPLICATION_JSON)
 public class ExamController {
+
     @Inject
     private ExamRepo examRepo;
 
@@ -28,9 +30,9 @@ public class ExamController {
 
     @POST
     public Response save(Exam exam, @Context UriInfo uriInfo){
-       Exam ex = examRepo.save(exam);
-       UriBuilder builder = uriInfo.getAbsolutePathBuilder();
-       builder.path(Integer.toString(ex.getIdExam()));
+       val examDto = examRepo.save(exam);
+       val builder = uriInfo.getAbsolutePathBuilder();
+       builder.path(Integer.toString(examDto.getIdExam()));
         return Response.created(builder.build()).build();
     }
 
@@ -44,10 +46,10 @@ public class ExamController {
     @DELETE
     @Path("/{id}")
     public Response eliminarExamen(@PathParam("id") Integer id){
-        Exam ex = examRepo.findById(new Exam(id));
-        if (ex == null)
+        val exam = examRepo.findById(new Exam(id));
+        if (exam == null)
             throw new WebApplicationException("ID NOT FOUND: "+id);
-        examRepo.delete(ex);
+        examRepo.delete(exam);
         return Response.noContent().build();
     }
 }
