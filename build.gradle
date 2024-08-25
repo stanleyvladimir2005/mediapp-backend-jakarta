@@ -11,7 +11,7 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.10.2'
+    junitVersion = '5.11.0'
 }
 
 java {
@@ -27,11 +27,11 @@ tasks.withType(JavaCompile).configureEach {
 dependencies {
     compileOnly 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0'
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0'
-    implementation 'org.glassfish.jersey.core:jersey-client:3.1.7'
+    implementation 'org.glassfish.jersey.core:jersey-client:3.1.8'
     implementation'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.4'
     implementation 'jakarta.validation:jakarta.validation-api:3.1.0'
     implementation 'jakarta.ejb:jakarta.ejb-api:4.0.1'
-    implementation 'org.postgresql:postgresql:42.7.3'
+    implementation 'org.postgresql:postgresql:42.7.4'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2'
     compileOnly 'org.projectlombok:lombok:1.18.34'
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
