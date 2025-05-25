@@ -11,7 +11,7 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.12.1'
+    junitVersion = '5.12.2'
 }
 
 java {
@@ -32,7 +32,7 @@ dependencies {
     implementation 'jakarta.validation:jakarta.validation-api:3.1.1'
     implementation 'jakarta.ejb:jakarta.ejb-api:4.0.1'
     implementation 'org.postgresql:postgresql:42.7.5'
-    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.3'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.0'
     compileOnly 'org.projectlombok:lombok:1.18.38'
     annotationProcessor 'org.projectlombok:lombok:1.18.38'
 
