@@ -11,12 +11,12 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.12.2'
+    junitVersion = '5.13.4'
 }
 
 java {
-    sourceCompatibility = '21'
-    targetCompatibility = '21'
+    sourceCompatibility = '25'
+    targetCompatibility = '25'
 
 }
 
@@ -27,14 +27,14 @@ tasks.withType(JavaCompile).configureEach {
 dependencies {
     compileOnly 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0'
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0'
-    implementation 'org.glassfish.jersey.core:jersey-client:3.1.10'
-    implementation'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.6'
+    implementation 'org.glassfish.jersey.core:jersey-client:3.1.11'
+    implementation'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.7'
     implementation 'jakarta.validation:jakarta.validation-api:3.1.1'
     implementation 'jakarta.ejb:jakarta.ejb-api:4.0.1'
-    implementation 'org.postgresql:postgresql:42.7.5'
-    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.0'
-    compileOnly 'org.projectlombok:lombok:1.18.38'
-    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+    implementation 'org.postgresql:postgresql:42.7.8'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.20.0'
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
